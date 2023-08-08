@@ -17,6 +17,7 @@
     "@storybook/addon-links": "^7.2.1",
     "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/blocks": "^7.2.1",
+    "@storybook/builder-vite": "^0.3.0",
     "@storybook/react": "^7.2.1",
     "@storybook/react-vite": "^7.2.1",
     "@storybook/testing-library": "^0.2.0",
@@ -28,9 +29,11 @@
     "vite": "^4.4.8"
   },
   "dependencies": {
+    "@ignite-ui/eslint-config": "*",
+    "@ignite-ui/ts-config": "*",
     "@ignite-ui/react": "*",
     "@ignite-ui/tokens": "*",
-    "@ignite-ui/eslint-config": "*",
+    "polished": "^4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
