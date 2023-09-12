@@ -204,7 +204,6 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
     transition: "transitions";
     zIndex: "zIndices";
 }, {}>>;
-interface BoxProps extends ComponentProps<typeof Box> {
-}
+type BoxProps = ComponentProps<typeof Box>;
 
 export { Box, BoxProps };
