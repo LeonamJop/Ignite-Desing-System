@@ -49,10 +49,17 @@ var src_exports = {};
 __export(src_exports, {
   Avatar: () => Avatar2,
   Box: () => Box,
+  Button: () => Button,
   Heading: () => Heading,
   Text: () => Text
 });
 module.exports = __toCommonJS(src_exports);
+
+// src/components/Avatar/index.tsx
+var import_phosphor_react = require("phosphor-react");
+
+// src/components/Avatar/styles.ts
+var Avatar = __toESM(require("@radix-ui/react-avatar"));
 
 // ../tokens/dist/index.mjs
 var colors = {
@@ -154,70 +161,7 @@ var {
   }
 });
 
-// src/components/Box.tsx
-var Box = styled("div", {
-  padding: "$4",
-  borderRadius: "$md",
-  backgroundColor: "$gray800",
-  border: "1px solid $gray600"
-});
-
-// src/components/Text.tsx
-var Text = styled("p", {
-  fontFamily: "$default",
-  lineHeight: "$base",
-  margin: 8,
-  color: "$gray100",
-  variants: {
-    size: {
-      xxs: { fontSize: "$xxs" },
-      xs: { fontSize: "$xs" },
-      sm: { fontSize: "$sm" },
-      md: { fontSize: "$md" },
-      lg: { fontSize: "$lg" },
-      xl: { fontSize: "$xl" },
-      "2xl": { fontSize: "$2xl" },
-      "4xl": { fontSize: "$4xl" },
-      "5xl": { fontSize: "$5xl" },
-      "6xl": { fontSize: "$6xl" },
-      "7xl": { fontSize: "$7xl" },
-      "8xl": { fontSize: "$8xl" },
-      "9xl": { fontSize: "$9xl" }
-    }
-  },
-  defaultVariants: {
-    size: "md"
-  }
-});
-
-// src/components/Heading.tsx
-var Heading = styled("h2", {
-  fontFamily: "$default",
-  lineHeight: "$shorter",
-  margin: 8,
-  color: "$gray100",
-  variants: {
-    size: {
-      sm: { fontSize: "$1xl" },
-      md: { fontSize: "$2xl" },
-      lg: { fontSize: "$4xl" },
-      "2xl": { fontSize: "$5xl" },
-      "3xl": { fontSize: "$6xl" },
-      "4xl": { fontSize: "$7xl" },
-      "5xl": { fontSize: "$8xl" },
-      "6xl": { fontSize: "$9xl" }
-    }
-  },
-  defaultVariants: {
-    size: "md"
-  }
-});
-
-// src/components/Avatar/index.tsx
-var import_phosphor_react = require("phosphor-react");
-
 // src/components/Avatar/styles.ts
-var Avatar = __toESM(require("@radix-ui/react-avatar"));
 var AvatarContainer = styled(Avatar.Root, {
   borderRadius: "$full",
   display: "inline-block",
@@ -253,10 +197,142 @@ function Avatar2(props) {
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.User, {}) })
   ] });
 }
+
+// src/components/Box.tsx
+var Box = styled("div", {
+  padding: "$4",
+  borderRadius: "$md",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray600"
+});
+
+// src/components/Button.tsx
+var Button = styled("button", {
+  all: "unset",
+  borderRadius: "$sm",
+  fontSize: "$sm",
+  fontWeight: "$medium",
+  fontFamily: "$default",
+  textAlign: "center",
+  minWidth: 120,
+  boxSizing: "border-box",
+  padding: "0 $4",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "$2",
+  cursor: "pointer",
+  svg: {
+    width: "$4",
+    height: "$4"
+  },
+  "&:disabled": {
+    cursor: "not-allowed"
+  },
+  variants: {
+    variant: {
+      primary: {
+        color: "$white",
+        background: "$ignite500",
+        "&:not(:disabled):hover": {
+          backgroundColor: "$ignite300"
+        },
+        "&:disabled": {
+          backgroundColor: "$gray200"
+        }
+      },
+      secondary: {
+        color: "$ignite300",
+        border: "2px solid $ignite500",
+        "&:not(:disabled):hover": {
+          backgroundColor: "$ignite500",
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray200",
+          borderColor: "$gray200"
+        }
+      },
+      tertiary: {
+        color: "$gray100",
+        "&:not(:disabled):hover": {
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray600"
+        }
+      }
+    },
+    size: {
+      sm: {
+        height: 38
+      },
+      md: {
+        height: 46
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md"
+  }
+});
+
+// src/components/Heading.tsx
+var Heading = styled("h2", {
+  fontFamily: "$default",
+  lineHeight: "$shorter",
+  margin: 8,
+  color: "$gray100",
+  variants: {
+    size: {
+      sm: { fontSize: "$1xl" },
+      md: { fontSize: "$2xl" },
+      lg: { fontSize: "$4xl" },
+      "2xl": { fontSize: "$5xl" },
+      "3xl": { fontSize: "$6xl" },
+      "4xl": { fontSize: "$7xl" },
+      "5xl": { fontSize: "$8xl" },
+      "6xl": { fontSize: "$9xl" }
+    }
+  },
+  defaultVariants: {
+    size: "md"
+  }
+});
+
+// src/components/Text.tsx
+var Text = styled("p", {
+  fontFamily: "$default",
+  lineHeight: "$base",
+  margin: 8,
+  color: "$gray100",
+  variants: {
+    size: {
+      xxs: { fontSize: "$xxs" },
+      xs: { fontSize: "$xs" },
+      sm: { fontSize: "$sm" },
+      md: { fontSize: "$md" },
+      lg: { fontSize: "$lg" },
+      xl: { fontSize: "$xl" },
+      "2xl": { fontSize: "$2xl" },
+      "4xl": { fontSize: "$4xl" },
+      "5xl": { fontSize: "$5xl" },
+      "6xl": { fontSize: "$6xl" },
+      "7xl": { fontSize: "$7xl" },
+      "8xl": { fontSize: "$8xl" },
+      "9xl": { fontSize: "$9xl" }
+    }
+  },
+  defaultVariants: {
+    size: "md"
+  }
+});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
   Box,
+  Button,
   Heading,
   Text
 });
